@@ -1,0 +1,42 @@
+{{ form_start(form, {'attr': {'class': 'space-y-6'}}) }}
+    <div class="grid grid-cols-1 gap-6">
+        <div>
+            {{ form_label(form.firstname, 'Prénom', {'label_attr': {'class': 'block text-sm font-bold text-gray-700 mb-2'}}) }}
+            {{ form_widget(form.firstname, {'attr': {'class': 'block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl'}}) }}
+            {{ form_errors(form.firstname) }}
+        </div>
+
+        <div>
+            {{ form_label(form.lastname, 'Nom', {'label_attr': {'class': 'block text-sm font-bold text-gray-700 mb-2'}}) }}
+            {{ form_widget(form.lastname, {'attr': {'class': 'block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl'}}) }}
+            {{ form_errors(form.lastname) }}
+        </div>
+
+        <div>
+            {{ form_label(form.email, 'Email', {'label_attr': {'class': 'block text-sm font-bold text-gray-700 mb-2'}}) }}
+            {{ form_widget(form.email, {'attr': {'class': 'block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl'}}) }}
+            {{ form_errors(form.email) }}
+        </div>
+
+        <div>
+            {{ form_label(form.phoneNumber, 'Téléphone', {'label_attr': {'class': 'block text-sm font-bold text-gray-700 mb-2'}}) }}
+            {{ form_widget(form.phoneNumber, {'attr': {'class': 'block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl'}}) }}
+            {{ form_errors(form.phoneNumber) }}
+        </div>
+
+        <div>
+            {{ form_label(form.address, 'Adresse', {'label_attr': {'class': 'block text-sm font-bold text-gray-700 mb-2'}}) }}
+            {{ form_widget(form.address, {'attr': {'class': 'block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl'}}) }}
+            {{ form_errors(form.address) }}
+        </div>
+
+        <div>
+            {{ form_label(form.createdAt, 'Créé le', {'label_attr': {'class': 'block text-sm font-bold text-gray-700 mb-2'}}) }}
+            {{ form_widget(form.createdAt, {'attr': {'class': 'block w-full px-4 py-3 bg-gray-100 border border-gray-200 rounded-xl'}}) }}
+        </div>
+    </div>
+
+    <div class="pt-6">
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-2xl">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+{{ form_end(form) }}

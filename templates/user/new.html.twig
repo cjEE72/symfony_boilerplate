@@ -1,0 +1,11 @@
+{# templates/user/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="max-w-2xl mx-auto py-12 px-4">
+    <div class="bg-white shadow-2xl rounded-3xl p-10 border border-gray-100">
+        <h1 class="text-3xl font-black text-gray-900 mb-8 text-center uppercase tracking-tight">Nouvel Utilisateur</h1>
+        {{ include('user/_form.html.twig', {'button_label': 'Créer le compte'}) }} 
+    </div>
+</div>
+{% endblock %}

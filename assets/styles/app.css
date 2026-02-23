@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 body {
     background-color: skyblue;
 }
+=======
+@import "tailwindcss";
+
+body {
+    background-color: white;
+}
+>>>>>>> 384dfd8 (feat: client validations, CSV import/export, Tailwind templates, fixtures, and tests; update README and phpunit config)

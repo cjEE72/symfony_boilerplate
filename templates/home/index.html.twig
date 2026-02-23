@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Backoffice{% endblock %}
+
+
+{% block body %}
+<div class="min-h-screen bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-extrabold text-indigo-600 mb-2">Dashboard</h1>
+        <p class="text-gray-600 mb-8">Connecté en tant que : <span class="font-mono bg-white px-2 py-1 rounded shadow-sm">{{ app.user ? app.user.userIdentifier : 'Invité' }}</span></p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {% if is_granted('ADMIN_ACCESS') %}
+            <a href="{{ path('app_user_index') }}" class="block p-6 bg-white border-l-4 border-blue-500 rounded-lg shadow-md hover:shadow-lg transition">
+                <h3 class="font-bold text-lg text-blue-700">Utilisateurs</h3>
+                <p class="text-sm text-gray-500">Gérer les comptes admin et staff.</p>
+            </a>
+            {% endif %}
+
+                      
+            <a href="{{ path('app_product_index') }}" class="block p-6 bg-white border-l-4 border-green-500 rounded-lg shadow-md hover:shadow-lg transition">
+                <h3 class="font-bold text-lg text-green-700">Produits</h3>
+                <p class="text-sm text-gray-500">Catalogue physique et numérique.</p>
+            </a>
+            {# On utilise CUSTOMER_ACCESS pour les produits et clients comme dans ton Voter #}
+            {% if is_granted('CUSTOMER_ACCESS') %}
+            <a href="{{ path('app_client_index') }}" class="block p-6 bg-white border-l-4 border-purple-500 rounded-lg shadow-md hover:shadow-lg transition">
+                <h3 class="font-bold text-lg text-purple-700">Clients</h3>
+                <p class="text-sm text-gray-500">Liste des clients et export.</p>
+            </a>
+            {% endif %}
+        </div>
+
+        <div class="mt-10 text-center">
+            <a href="{{ path('app_logout') }}" class="text-red-500 hover:underline">Se déconnecter</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau client{% endblock %}
+
+{% block body %}
+<div class="max-w-3xl mx-auto py-12 px-4">
+    <div class="mb-6">
+        <a href="{{ path('app_client_index') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-800 flex items-center gap-2">
+            ← Retour à la liste
+        </a>
+    </div>
+
+    <div class="bg-white shadow-2xl rounded-3xl overflow-hidden border border-gray-100">
+        <div class="bg-indigo-600 px-8 py-6">
+            <h1 class="text-2xl font-bold text-white">Créer un client</h1>
+            <p class="text-indigo-100 text-sm opacity-80">Ajoutez les informations du client</p>
+        </div>
+
+        <div class="p-8">
+            {{ include('client/_form.html.twig', {'button_label': 'Créer le client'}) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
